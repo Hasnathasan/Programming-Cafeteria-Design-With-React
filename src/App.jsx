@@ -6,10 +6,8 @@ import Header from './components/Header/Header'
 import Main from './components/Main/Main'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App p-3 overflow-hidden">
+    <div className="App p-3 relative overflow-hidden">
       <Header></Header>
       <Main></Main>
     </div>

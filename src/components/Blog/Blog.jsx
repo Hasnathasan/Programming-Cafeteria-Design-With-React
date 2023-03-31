@@ -4,8 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
 const Blog = (props) => {
-    console.log(props.blog);
-    const {author, authorImg, coverImg, title, hashTag, readingTime} = props.blog;
+    const {id, author, authorImg, coverImg, title, hashTag, readingTime} = props.blog;
+    const addToBookmark = props.addToBookmark;
+    const addReadingTime = props.addReadingTime;
     return (
         <div className="mt-9">
             <div className="w-full rounded overflow-hidden h-56 sm:h-larg" >
@@ -23,13 +24,13 @@ const Blog = (props) => {
                         </div>
                     </div>
                     <div>
-                        <h5 className="text-sm sm:text-base text-gray-600">{readingTime} min read <button><FontAwesomeIcon icon={faBookmark} /></button></h5>
+                        <h5 className="text-sm sm:text-base text-gray-600">{readingTime} min read <button onClick={() => addToBookmark(id)}><FontAwesomeIcon icon={faBookmark} /></button></h5>
                     </div>
                 </div>
                 <div>
                     <h1 className="text-2xl  sm:text-4xl font-semibold my-4">{title}</h1>
                     <h5 className=" text-gray-600"><span className="mr-2">{hashTag[0]}</span> <span>{hashTag[1]}</span></h5>
-                    <button className="mt-2" style={{color:"#646cff", textDecoration:"underline"}}>Mark as read</button>
+                    <button className="mt-2" onClick={() => addReadingTime(id)} style={{color:"#646cff", textDecoration:"underline"}}>Mark as read</button>
                 </div>
             </div>
             <hr className="my-3" />
