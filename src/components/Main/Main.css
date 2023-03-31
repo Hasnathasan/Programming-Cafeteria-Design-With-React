@@ -1,9 +1,0 @@
-.main-section{
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-}
-.blogs{
-    margin: 32px 0;
-    padding-right: 100px;
-    box-sizing: border-box;
-}
