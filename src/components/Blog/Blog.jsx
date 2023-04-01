@@ -1,39 +1,33 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
-const Blog = (props) => {
-    const {id, author, authorImg, coverImg, title, hashTag, readingTime} = props.blog;
-    const addToBookmark = props.addToBookmark;
-    const addReadingTime = props.addReadingTime;
+const Blog = () => {
     return (
-        <div className="mt-9">
-            <div className="w-full rounded overflow-hidden h-56 sm:h-larg" >
-                <img className="w-full h-full" src={coverImg} alt="" />
-            </div>
-            <div>
-                <div className="flex justify-between items-center my-4">
-                    <div className="flex gap-3">
-                        <div className="w-14 h-14 overflow-hidden rounded-full">
-                            <img className="w-full" src={authorImg} alt="" />
-                        </div>
-                        <div className="">
-                            <h3 className="text-lg sm:text-2xl font-semibold">{author}</h3>
-                            <h5 className="text-sm sm:text-base text-gray-600">Mar 27 (3 days ago)</h5>
-                        </div>
-                    </div>
-                    <div>
-                        <h5 className="text-sm sm:text-base text-gray-600">{readingTime} min read <button onClick={() => addToBookmark(id)}><FontAwesomeIcon icon={faBookmark} /></button></h5>
-                    </div>
-                </div>
-                <div>
-                    <h1 className="text-2xl  sm:text-4xl font-semibold my-4">{title}</h1>
-                    <h5 className=" text-gray-600"><span className="mr-2">{hashTag[0]}</span> <span>{hashTag[1]}</span></h5>
-                    <button className="mt-2" onClick={() => addReadingTime(id)} style={{color:"#646cff", textDecoration:"underline"}}>Mark as read</button>
-                </div>
-            </div>
-            <hr className="my-3" />
+        <div className="bg-indigo-100 my-8 p-4 sm:p-8 rounded">
+            <h1 className="text-3xl font-bold mb-7 text-center">Q&A Section</h1>
+            <h2 className="text-2xl font-bold mb-2">What is the difference between state and prop in React?</h2>
+            <p className="text-lg font-medium mb-10">Ans: In React, state manage internel data in a component and can be changed by 
+                the component using the setState() method. On the other hand,
+                props are read-only data passed down from a parent component and 
+                cannot be changed by the component.
+            </p>
+
+            <h2 className="text-2xl font-bold mb-2">How does useState work?</h2>
+            <p className="text-lg font-medium mb-10">Ans: The useState hook adds state to a functional component in React. It initializes and updates state, 
+                and merges the updated state with the previous state when re-rendering the component.
+            </p>
+            
+            <h2 className="text-2xl font-bold mb-2">What is the Purpose of useEffect other than fetching data?</h2>
+            <p className="text-lg font-medium mb-10">Ans: It can be used to update the document title, add and remove event listeners, set up subscriptions, 
+                and perform cleanup operations. Essentially, useEffect allows you to perform side effects in your 
+                components, such as interacting with the browser DOM, in a declarative way.
+            </p>
+
+            <h2 className="text-2xl font-bold mb-2">How Does React work?</h2>
+            <p className="text-lg font-medium mb-10">React is a JavaScript library that helps build user interfaces. It works by creating a 
+                "virtual" version of the web page, making updates to it when necessary, and then 
+                updating the actual web page. React uses a declarative approach to building UI components, 
+                which makes them easier to maintain and scale.
+            </p>
         </div>
     );
 };

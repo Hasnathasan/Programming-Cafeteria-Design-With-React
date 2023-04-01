@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Blog from '../Blog/Blog';
+import Card from '../Card/Card';
 import Bookmarks from '../Bookmarks/Bookmarks';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -48,7 +48,7 @@ const Main = () => {
         <div className="container grid grid-cols-12">
             <div className="col-span-12 sm:col-span-8">
                 {
-                    blogs.map(blog => <Blog blog={blog} addToBookmark={addToBookmark} addReadingTime={addReadingTime} key={blog.id}></Blog>)
+                    blogs.map(blog => <Card blog={blog} addToBookmark={addToBookmark} addReadingTime={addReadingTime} key={blog.id}></Card>)
                 }
                 <ToastContainer 
                     position="top-right"
